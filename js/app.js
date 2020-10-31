@@ -74,12 +74,12 @@ class UI {
     static cambiarBtn(e) {
        const textoBtn = e.target.textContent
 
-       if(textoBtn === "Agregar Cliente nuevo ⏷") {
-           e.target.textContent = "Ocultar Formulario ⏶"
+       if(textoBtn === "Agregar Cliente nuevo") {
+           e.target.textContent = "Ocultar Formulario"
            e.target.className = "btn btn-danger btn-md mb-3 text-light"
            form.style.display = "block"
        } else {
-           e.target.textContent = "Agregar Cliente nuevo ⏷"
+           e.target.textContent = "Agregar Cliente nuevo"
            e.target.className = "btn btn-success btn-md mb-3"
            form.style.display = "none"
        }
