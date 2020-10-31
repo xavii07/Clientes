@@ -69,13 +69,21 @@ class UI {
                 fila.style.display = "none"
             }
         })
-        
+    }
 
+    static cambiarBtn(e) {
+       const textoBtn = e.target.textContent
+
+       if(textoBtn === "Agregar Cliente nuevo ⏷") {
+           e.target.textContent = "Ocultar Formulario ⏶"
+           e.target.className = "btn btn-danger btn-md mb-3 text-light"
+           form.style.display = "block"
+       } else {
+           e.target.textContent = "Agregar Cliente nuevo ⏷"
+           e.target.className = "btn btn-success btn-md mb-3"
+           form.style.display = "none"
+       }
         
-        
-        
-        
-    
     }
 }
 
@@ -135,7 +143,10 @@ form.addEventListener("submit", (e) => {
     }  
 })
 
-document.addEventListener("DOMContentLoaded", UI.mostrarClientes)
+document.addEventListener("DOMContentLoaded", () => {    
+    UI.mostrarClientes()
+    form.style.display = "none"
+})
 
 const listaT = document.querySelector("#listaCliente")
 listaT.addEventListener("click", (e) => {
@@ -147,4 +158,10 @@ listaT.addEventListener("click", (e) => {
 const filtro = document.querySelector("#filtro")
 filtro.addEventListener("keyup", (e) => {
     UI.filtrarClientes(e)
+})
+
+//agregar clientes nuevos
+const btn = document.querySelector("#cambiar")
+btn.addEventListener("click", (e) =>{ 
+    UI.cambiarBtn(e)
 })
