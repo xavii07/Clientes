@@ -1,6 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap');
+
 * {
-    font-family: 'Lobster Two', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:url("../img/az_subtle.png");
+}
+
+.container {
+    font-family: 'Lobster Two';
+}
+
+.caja {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    font-family: 'Chau Philomene One', sans-serif;
+}
+    
+.fila {
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    font-size: 16px;
+    border:1px solid rgb(109, 126, 161);
+}
+
+h5 {
+    display: inline-block;
+    font-size: 16px;
+    /*color:rgb(33, 90, 212);*/
+    letter-spacing: 1px;
 }
 
 
-    
+
+@media screen and (min-width:768px) {
+    .container {
+        width: 50%;
+        margin: auto;
+    }
+
+    .caja {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .fila {
+        width: 49%;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    .fila {
+        width: 32%;
+    }
+}
