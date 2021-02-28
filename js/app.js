@@ -16,15 +16,15 @@ class UI {
 
     static agregarClienteLista(cliente) {
         const lista = document.querySelector("#listaCliente")
-        const fila = document.createElement("tr")
+        const fila = document.createElement("div")
         fila.className = "fila"
         fila.innerHTML = `
-            <td>${cliente.pos}</td>
-            <td>${cliente.ciudad}</td>
-            <td>${cliente.nombre}</td>
-            <td>${cliente.direccion}</td>
-            <td>${cliente.ferreteria}</td>
-            <td><a <a href="#" class="btn btn-danger btn-sm delete">x</a></td>
+            <p><h5 class="text-info">Pos:</h5> ${cliente.pos}</p>
+            <p><h5 class="text-info">Ciudad:</h5> ${cliente.ciudad}</p>
+            <p><h5 class="text-info">Nombre:</h5> ${cliente.nombre}</p>
+            <p><h5 class="text-info">Dirección:</h5> ${cliente.direccion}</p>
+            <p><h5 class="text-info">Nombre F:</h5> ${cliente.ferreteria}</p>
+            <span><a href="#" class="btn btn-warning btn-block delete">Borrar</a></span>
         `
         lista.appendChild(fila)
     }
@@ -62,9 +62,9 @@ class UI {
         const filas = document.querySelectorAll(".fila")
         Array.from(filas).forEach((fila) => {
             //selecciono el nombre de cada cliente que esta en la fila
-            let nombreClie = fila.childNodes[5].textContent
+            let nombreClie = fila.childNodes[13].textContent
             if(nombreClie.toLowerCase().indexOf(texto) !== -1) {
-               fila.style.display = "table-row"
+               fila.style.display = "block"
             } else {
                 fila.style.display = "none"
             }
